@@ -54,7 +54,8 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-//    seconds = 23 * 3600;
+    AppDelegate *appDelegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
+    [appDelegate enableBackgroundTask];
     
     [self initLayout];
     
@@ -82,7 +83,7 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
     }
     
     NSInteger days = [[NSUserDefaults standardUserDefaults] integerForKey:kUserKeyMahangAcidentDays];    
-    _daysLabel.text = [NSString stringWithFormat:@"第%d天", days];
+    _daysLabel.text = [NSString stringWithFormat:@"第%ld天", (long)days];
     
 //    NSString *tagText = @"京东京东京";
 //    NSString *mainText = @"哈哈哈哈哈哈drwer哈哈哈哈哈哈drwer哈哈哈哈哈哈drwer哈哈哈哈!";
@@ -103,7 +104,7 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
 }
 
 - (void)postMsgWithDays:(NSInteger)days{
-    NSString *content = [NSString stringWithFormat:@"#马航飞机失事# 第%d天[蜡烛]", days];
+    NSString *content = [NSString stringWithFormat:@"#马航飞机失事# 第%ld天[蜡烛] @马来西亚航空", (long)days];
     id<ISSContent> publishContent = [ShareSDK content:content
                                        defaultContent:nil
                                                 image:nil
@@ -185,7 +186,7 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
 - (IBAction)testPublish:(id)sender{
     NSInteger days = [[NSUserDefaults standardUserDefaults] integerForKey:kUserKeyMahangAcidentDays];
     days++;
-    _daysLabel.text = [NSString stringWithFormat:@"第%d天", days];
+    _daysLabel.text = [NSString stringWithFormat:@"第%ld天", (long)days];
     [self postMsgWithDays:days];
 //    _tagLabel.tagText = nil;
 //    _tagLabel.lineSpace = 10.0f;
@@ -197,19 +198,19 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
 - (void)timeToRequestPublishMessage:(NSTimer *)timer{
     seconds++;
     
-    _secondsLabel.text = [NSString stringWithFormat:@"%d", seconds];
+    _secondsLabel.text = [NSString stringWithFormat:@"%ld", (long)seconds];
     
-    NSLog(@"%s, second: %d, backgroundTimeRemaining: %f", __FUNCTION__, seconds, [UIApplication sharedApplication].backgroundTimeRemaining);
+    NSLog(@"%s, second: %ld, backgroundTimeRemaining: %f", __FUNCTION__, (long)seconds, [UIApplication sharedApplication].backgroundTimeRemaining);
     
-    AppDelegate *appDelegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
-    if(seconds % 10 == 0){
-        [appDelegate disableBackgroundTask];
-        
-    }
-    
-    if(seconds % 25 == 0){
-        [appDelegate enableBackgroundTask];
-    }
+//    AppDelegate *appDelegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
+//    if(seconds % 10 == 0){
+//        [appDelegate disableBackgroundTask];
+//        
+//    }
+//    
+//    if(seconds % 25 == 0){
+//        [appDelegate enableBackgroundTask];
+//    }
     
     if(seconds == 24 * 3600){
         seconds = 0;
@@ -218,7 +219,7 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
         
         NSInteger days = [[NSUserDefaults standardUserDefaults] integerForKey:kUserKeyMahangAcidentDays];
         days++;
-        _daysLabel.text = [NSString stringWithFormat:@"第%d天", days];
+        _daysLabel.text = [NSString stringWithFormat:@"第%ld天", (long)days];
         [self postMsgWithDays:days];
     }
 }

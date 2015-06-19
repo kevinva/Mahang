@@ -678,7 +678,7 @@
 				ORGANIZATIONNAME = "何 峙";
 				TargetAttributes = {
 					821CBE8D18E40B2F003E0F90 = {
-						DevelopmentTeam = 2PK855G29W;
+						DevelopmentTeam = F2X8XYDGEK;
 					};
 					821CBEAE18E40B2F003E0F90 = {
 						TestTargetID = 821CBE8D18E40B2F003E0F90;
@@ -912,8 +912,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Lei Han (ZZZ7H89JV5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lei Han (ZZZ7H89JV5)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Guangzhou Taolue advertising co., LTD (F2X8XYDGEK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guangzhou Taolue advertising co., LTD (F2X8XYDGEK)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/ShareSDK_v2.11.0/Connection",
 					"$(PROJECT_DIR)/ShareSDK_v2.11.0/Core",
@@ -936,7 +936,7 @@
 					"$(PROJECT_DIR)/ShareSDK_v2.11.0/Extend/YiXinSDK",
 				);
 				PRODUCT_NAME = "马航失事";
-				PROVISIONING_PROFILE = "9EE30E11-BA54-4D64-B8B6-59B49B768944";
+				PROVISIONING_PROFILE = "6d5c6324-70ab-4116-928a-4ffbf1391868";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -947,8 +947,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Lei Han (ZZZ7H89JV5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lei Han (ZZZ7H89JV5)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Guangzhou Taolue advertising co., LTD (F2X8XYDGEK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guangzhou Taolue advertising co., LTD (F2X8XYDGEK)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/ShareSDK_v2.11.0/Connection",
 					"$(PROJECT_DIR)/ShareSDK_v2.11.0/Core",
@@ -971,7 +971,7 @@
 					"$(PROJECT_DIR)/ShareSDK_v2.11.0/Extend/YiXinSDK",
 				);
 				PRODUCT_NAME = "马航失事";
-				PROVISIONING_PROFILE = "9EE30E11-BA54-4D64-B8B6-59B49B768944";
+				PROVISIONING_PROFILE = "6d5c6324-70ab-4116-928a-4ffbf1391868";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -994,7 +994,7 @@
 				);
 				INFOPLIST_FILE = "KevinExampleTests/KevinExampleTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b1d2d96f-b29f-4e39-83a9-662e8d1dd791";
+				PROVISIONING_PROFILE = "91bcd162-b62e-4a77-a559-a599d47b8c83";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1014,7 +1014,7 @@
 				GCC_PREFIX_HEADER = "KevinExample/KevinExample-Prefix.pch";
 				INFOPLIST_FILE = "KevinExampleTests/KevinExampleTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b1d2d96f-b29f-4e39-83a9-662e8d1dd791";
+				PROVISIONING_PROFILE = "91bcd162-b62e-4a77-a559-a599d47b8c83";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};

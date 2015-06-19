@@ -13,7 +13,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface AppDelegate ()
+@interface AppDelegate () <CLLocationManagerDelegate>
 
 @property (nonatomic, retain) CLLocationManager *locationManager;
 
@@ -31,7 +31,7 @@
 
     [self enableBackgroundTask];
     
-    NSDictionary *dict = @{kUserKeyMahangAcidentDays: @(59)};
+    NSDictionary *dict = @{kUserKeyMahangAcidentDays: @(465)};
     [[NSUserDefaults standardUserDefaults] registerDefaults:dict];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
@@ -102,15 +102,25 @@
 - (void)enableBackgroundTask{
     if(!_locationManager){
         self.locationManager = [[CLLocationManager alloc] init];
+        _locationManager.delegate = self;
+        [_locationManager requestAlwaysAuthorization];
     }
-    
-    [_locationManager startUpdatingLocation];
 }
 
 - (void)disableBackgroundTask{
     if(_locationManager){
         [_locationManager stopUpdatingLocation];
     }    
+}
+
+#pragma mark - CLLocationManagerDeleagte
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+//    if (status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+//        [_locationManager startUpdatingLocation];
+//    }
+    
+    [_locationManager startUpdatingLocation];
 }
 
 @end

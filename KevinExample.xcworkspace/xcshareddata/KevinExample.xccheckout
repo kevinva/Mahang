@@ -10,6 +10,8 @@
 	<string>KevinExample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>AC7FD4DB52E00E3B6684AEB6796DDF580E0E00E5</key>
+		<string>github.com:kevinva/Mahang.git</string>
 		<key>F6B07C9A-0A73-4616-9C63-4896EDE1EEE2</key>
 		<string>https://github.com/kevinva/MahangExample.git</string>
 	</dict>
@@ -17,15 +19,17 @@
 	<string>KevinExample.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F6B07C9A-0A73-4616-9C63-4896EDE1EEE2</key>
+		<key>AC7FD4DB52E00E3B6684AEB6796DDF580E0E00E5</key>
 		<string>..</string>
+		<key>F6B07C9A-0A73-4616-9C63-4896EDE1EEE2</key>
+		<string>../../MahangExample</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/kevinva/MahangExample.git</string>
+	<string>github.com:kevinva/Mahang.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F6B07C9A-0A73-4616-9C63-4896EDE1EEE2</string>
+	<string>AC7FD4DB52E00E3B6684AEB6796DDF580E0E00E5</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>F6B07C9A-0A73-4616-9C63-4896EDE1EEE2</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MahangExample</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AC7FD4DB52E00E3B6684AEB6796DDF580E0E00E5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MahangExample-master</string>
 		</dict>
 	</array>
 </dict>
