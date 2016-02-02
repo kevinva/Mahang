@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SettingsViewControllerDelegate;
+
 @interface SettingsViewController : UIViewController
+
+@property (nonatomic,   weak) id<SettingsViewControllerDelegate> delegate;
+@property (nonatomic, assign) NSInteger day;
+
+@end
+
+@protocol SettingsViewControllerDelegate <NSObject>
+
+- (void)settingsViewController:(SettingsViewController *)controller didSaveWithDay:(NSInteger)day;
 
 @end

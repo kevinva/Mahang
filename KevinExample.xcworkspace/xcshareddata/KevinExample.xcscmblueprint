@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "AC7FD4DB52E00E3B6684AEB6796DDF580E0E00E5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "AC7FD4DB52E00E3B6684AEB6796DDF580E0E00E5" : 0,
+    "F6B07C9A-0A73-4616-9C63-4896EDE1EEE2" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FE2AA4D3-D9E8-419F-B9B7-EE543B925762",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "AC7FD4DB52E00E3B6684AEB6796DDF580E0E00E5" : "MahangExample-master",
+    "F6B07C9A-0A73-4616-9C63-4896EDE1EEE2" : "MahangExample"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "KevinExample",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "KevinExample.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:kevinva\/Mahang.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AC7FD4DB52E00E3B6684AEB6796DDF580E0E00E5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kevinva\/MahangExample.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F6B07C9A-0A73-4616-9C63-4896EDE1EEE2"
+    }
+  ]
+}

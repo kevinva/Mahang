@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import <ShareSDK/ShareSDK.h>
+#import <ShareSDKConnector/ShareSDKConnector.h>
+#import "WeiboSDK.h"
 #import "Constants.h"
 #import <AVFoundation/AVFoundation.h>
 #import <CoreLocation/CoreLocation.h>
@@ -31,7 +33,7 @@
 
     [self enableBackgroundTask];
     
-    NSDictionary *dict = @{kUserKeyMahangAcidentDays: @(465)};
+    NSDictionary *dict = @{kUserKeyMahangAcidentDays: @(633)};
     [[NSUserDefaults standardUserDefaults] registerDefaults:dict];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
@@ -90,11 +92,33 @@
 #pragma mark - Private methods
 
 - (void)initShareSDK{
-    [ShareSDK registerApp:kShareSDKAppKey];
-    
-    [ShareSDK connectSinaWeiboWithAppKey:kWeiboAppKey
-                               appSecret:kWeiboAppSecret
-                             redirectUri:kWeiboRedirectUri];
+    [ShareSDK registerApp:kShareSDKAppKey
+     
+          activePlatforms:@[@(SSDKPlatformTypeSinaWeibo)]
+                 onImport:^(SSDKPlatformType platformType) {
+                     
+                     switch (platformType) {
+                         case SSDKPlatformTypeSinaWeibo:
+                             [ShareSDKConnector connectWeibo:[WeiboSDK class]];
+                             break;
+                         default:
+                             break;
+                     }
+                 }
+          onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo) {
+         
+              switch (platformType) {
+                  case SSDKPlatformTypeSinaWeibo:
+                      //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
+                      [appInfo SSDKSetupSinaWeiboByAppKey:kWeiboAppKey
+                                                appSecret:kWeiboAppSecret
+                                              redirectUri:kWeiboRedirectUri
+                                                 authType:SSDKAuthTypeBoth];
+                      break;
+                  default:
+                      break;
+              }
+          }];
 }
 
 #pragma mark - Public methods

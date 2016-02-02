@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import "AppDelegate.h"
 #import "HzTagLabel.h"
+#import "SettingsViewController.h"
 
 static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
 
@@ -20,7 +21,7 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
 
 @end
 
-@interface ViewController () <UIAlertViewDelegate>{
+@interface ViewController () <UIAlertViewDelegate, SettingsViewControllerDelegate>{
     
     NSTimer *publishTimer;
     NSInteger seconds;
@@ -59,7 +60,7 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
     
     [self initLayout];
     
-    publishTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timeToRequestPublishMessage:) userInfo:nil repeats:YES];
+//    publishTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timeToRequestPublishMessage:) userInfo:nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,7 +72,8 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
 #pragma mark - Private methods
 
 - (void)initLayout{
-    if([ShareSDK hasAuthorizedWithType:ShareTypeSinaWeibo]){
+    
+    if([ShareSDK hasAuthorized:SSDKPlatformTypeSinaWeibo]){
         NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:kUserKeyWeiboUserName];
         _weiboNameLabel.text = userName;
         
@@ -105,50 +107,60 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
 
 - (void)postMsgWithDays:(NSInteger)days{
     NSString *content = [NSString stringWithFormat:@"#马航飞机失事# 第%ld天[蜡烛] @马来西亚航空", (long)days];
-    id<ISSContent> publishContent = [ShareSDK content:content
-                                       defaultContent:nil
-                                                image:nil
-                                                title:nil
-                                                  url:nil
-                                          description:nil
-                                            mediaType:SSPublishContentMediaTypeText];
     
-    [ShareSDK shareContent:publishContent
-                      type:ShareTypeSinaWeibo
-               authOptions:nil
-              shareOptions:nil
-             statusBarTips:YES
-                    result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
-                        
-                        if(state == SSResponseStateSuccess){
-                            [[NSUserDefaults standardUserDefaults] setInteger:days forKey:kUserKeyMahangAcidentDays];
-                            [[NSUserDefaults standardUserDefaults] synchronize];
-                        }
-                        
-                        if(end){
-                            NSString *filePath = [kDirDocument stringByAppendingPathComponent:kFilePostingMessageLog];
-                            NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
-                            if(!dict){
-                                dict = [[NSMutableDictionary alloc] init];
-                            }
-                            
-                            if(!error || (NSNull *)error == [NSNull null]){
-                                [dict setObject:@"ok" forKey:[NSDate date].description];
-                            }
-                            else{
-                                [dict setObject:error.errorDescription forKey:[NSDate date].description];
-                            }
-                            [dict writeToFile:filePath atomically:YES];                            
-                            
-                        }
-                        
-                    }];
+    NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
+    [shareParams SSDKEnableUseClientShare];
+    [shareParams SSDKSetupShareParamsByText:content
+                                     images:nil
+                                        url:nil
+                                      title:@"title"
+                                       type:SSDKContentTypeText];
+    
+    [ShareSDK share:SSDKPlatformTypeSinaWeibo
+         parameters:shareParams
+     onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
+         
+         if (state == SSDKResponseStateSuccess) {
+             [[NSUserDefaults standardUserDefaults] setInteger:days forKey:kUserKeyMahangAcidentDays];
+             [[NSUserDefaults standardUserDefaults] synchronize];
+             
+             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                 message:@"发表成功！"
+                                                                delegate:nil
+                                                       cancelButtonTitle:@"OK"
+                                                       otherButtonTitles:nil];
+             [alertView show];
+         }
+         else {
+             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                 message:error.localizedDescription
+                                                                delegate:nil
+                                                       cancelButtonTitle:@"OK"
+                                                       otherButtonTitles:nil];
+             [alertView show];
+         }
+         
+         NSString *filePath = [kDirDocument stringByAppendingPathComponent:kFilePostingMessageLog];
+         NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+         if(!dict){
+             dict = [[NSMutableDictionary alloc] init];
+         }
+         
+         if(!error || (NSNull *)error == [NSNull null]){
+             [dict setObject:@"ok" forKey:[NSDate date].description];
+         }
+         else{
+             [dict setObject:error.localizedDescription forKey:[NSDate date].description];
+         }
+         [dict writeToFile:filePath atomically:YES];
+         
+     }];
 }
 
 #pragma mark - Action control
 
 - (IBAction)boundOrUnboundWeibo:(id)sender{
-    if([ShareSDK hasAuthorizedWithType:ShareTypeSinaWeibo]){
+    if([ShareSDK hasAuthorized:SSDKPlatformTypeSinaWeibo]){
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
                                                             message:@"确定取消绑定？"
                                                            delegate:self
@@ -157,26 +169,23 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
         [alertView show];
     }
     else{
-        [ShareSDK authWithType:ShareTypeSinaWeibo options:nil result:^(SSAuthState state, id<ICMErrorInfo> error) {
+        [ShareSDK authorize:SSDKPlatformTypeSinaWeibo settings:nil onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error) {
             
-            if(state == SSAuthStateSuccess){
+            if (state == SSDKResponseStateSuccess) {
+                [[NSUserDefaults standardUserDefaults] setObject:user.nickname forKey:kUserKeyWeiboUserName];
+                [[NSUserDefaults standardUserDefaults] synchronize];
                 
-                [ShareSDK getUserInfoWithType:ShareTypeSinaWeibo authOptions:nil result:^(BOOL result, id<ISSPlatformUser> userInfo, id<ICMErrorInfo> error) {
-                    
-                    if(result){
-                        [[NSUserDefaults standardUserDefaults] setObject:userInfo.nickname forKey:kUserKeyWeiboUserName];
-                        [[NSUserDefaults standardUserDefaults] synchronize];
-                        
-                        
-                        _weiboNameLabel.text = userInfo.nickname;
-                        [_boundWeiboButton setTitle:@"取消绑定新浪微博" forState:UIControlStateNormal];
-                    }
-                    
-                }];
                 
+                _weiboNameLabel.text = user.nickname;
+                [_boundWeiboButton setTitle:@"取消绑定新浪微博" forState:UIControlStateNormal];
             }
-            else if(state == SSAuthStateFail){
-                NSLog(@"%s, error: %@", __FUNCTION__, error.errorDescription);
+            else {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                                    message:error.localizedDescription
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                [alertView show];
             }
             
         }];
@@ -191,6 +200,13 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
 //    _tagLabel.tagText = nil;
 //    _tagLabel.lineSpace = 10.0f;
 //    [_tagLabel refresh];
+}
+
+- (IBAction)presentSettings:(id)sender {
+    SettingsViewController *settingsVC = [[SettingsViewController alloc] init];
+    settingsVC.delegate = self;
+    settingsVC.day = [[NSUserDefaults standardUserDefaults] integerForKey:kUserKeyMahangAcidentDays];
+    [self presentViewController:settingsVC animated:YES completion:nil];
 }
 
 #pragma mark - NSTimer callback
@@ -228,7 +244,7 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if(buttonIndex == 1){
-        [ShareSDK cancelAuthWithType:ShareTypeSinaWeibo];
+        [ShareSDK cancelAuthorize:SSDKPlatformTypeSinaWeibo];
         
         _weiboNameLabel.text = @"xxx";
         [_boundWeiboButton setTitle:@"绑定新浪微博" forState:UIControlStateNormal];
@@ -236,6 +252,16 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserKeyWeiboUserName];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
+}
+
+
+#pragma mark - SettingsViewControllerDelegate
+
+- (void)settingsViewController:(SettingsViewController *)controller didSaveWithDay:(NSInteger)day {
+    _daysLabel.text = [NSString stringWithFormat:@"第%ld天", (long)day];
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:day forKey:kUserKeyMahangAcidentDays];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end
