@@ -133,7 +133,7 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
          }
          else {
              UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                                 message:error.localizedDescription
+                                                                 message:error.description
                                                                 delegate:nil
                                                        cancelButtonTitle:@"OK"
                                                        otherButtonTitles:nil];
@@ -181,7 +181,7 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
             }
             else {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-                                                                    message:error.localizedDescription
+                                                                    message:error.description
                                                                    delegate:nil
                                                           cancelButtonTitle:@"OK"
                                                           otherButtonTitles:nil];

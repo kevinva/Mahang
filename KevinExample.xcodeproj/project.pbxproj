@@ -461,7 +461,7 @@
 				ORGANIZATIONNAME = "何 峙";
 				TargetAttributes = {
 					821CBE8D18E40B2F003E0F90 = {
-						DevelopmentTeam = F2X8XYDGEK;
+						DevelopmentTeam = E2C358R24T;
 					};
 					821CBEAE18E40B2F003E0F90 = {
 						TestTargetID = 821CBE8D18E40B2F003E0F90;
@@ -615,8 +615,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Lei Han (ZZZ7H89JV5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lei Han (ZZZ7H89JV5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhi he (LF544X4TQM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhi he (LF544X4TQM)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -634,7 +634,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "9EE30E11-BA54-4D64-B8B6-59B49B768944";
+				PROVISIONING_PROFILE = "77829060-55f3-491c-993d-401be04eb26b";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -655,8 +655,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Lei Han (ZZZ7H89JV5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lei Han (ZZZ7H89JV5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhi he (LF544X4TQM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhi he (LF544X4TQM)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -667,7 +667,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PROVISIONING_PROFILE = "9EE30E11-BA54-4D64-B8B6-59B49B768944";
+				PROVISIONING_PROFILE = "77829060-55f3-491c-993d-401be04eb26b";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -761,7 +761,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Guangzhou Taolue advertising co., LTD (F2X8XYDGEK)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhi he (LF544X4TQM)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -775,7 +775,7 @@
 				);
 				INFOPLIST_FILE = "KevinExampleTests/KevinExampleTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "91bcd162-b62e-4a77-a559-a599d47b8c83";
+				PROVISIONING_PROFILE = "77829060-55f3-491c-993d-401be04eb26b";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -785,7 +785,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Guangzhou Taolue advertising co., LTD (F2X8XYDGEK)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zhi he (LF544X4TQM)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -795,7 +795,7 @@
 				GCC_PREFIX_HEADER = "KevinExample/KevinExample-Prefix.pch";
 				INFOPLIST_FILE = "KevinExampleTests/KevinExampleTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "91bcd162-b62e-4a77-a559-a599d47b8c83";
+				PROVISIONING_PROFILE = "77829060-55f3-491c-993d-401be04eb26b";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
