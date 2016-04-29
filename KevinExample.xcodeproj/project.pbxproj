@@ -710,7 +710,7 @@
 					"$(PROJECT_DIR)/KevinExample/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
 				PRODUCT_NAME = "马航失事";
-				PROVISIONING_PROFILE = "77829060-55f3-491c-993d-401be04eb26b";
+				PROVISIONING_PROFILE = "a811edda-e9a6-4f36-b1f4-04b4606f03b4";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -752,7 +752,7 @@
 					"$(PROJECT_DIR)/KevinExample/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
 				PRODUCT_NAME = "马航失事";
-				PROVISIONING_PROFILE = "77829060-55f3-491c-993d-401be04eb26b";
+				PROVISIONING_PROFILE = "a811edda-e9a6-4f36-b1f4-04b4606f03b4";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -775,7 +775,7 @@
 				);
 				INFOPLIST_FILE = "KevinExampleTests/KevinExampleTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "77829060-55f3-491c-993d-401be04eb26b";
+				PROVISIONING_PROFILE = "a811edda-e9a6-4f36-b1f4-04b4606f03b4";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -795,7 +795,7 @@
 				GCC_PREFIX_HEADER = "KevinExample/KevinExample-Prefix.pch";
 				INFOPLIST_FILE = "KevinExampleTests/KevinExampleTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "77829060-55f3-491c-993d-401be04eb26b";
+				PROVISIONING_PROFILE = "a811edda-e9a6-4f36-b1f4-04b4606f03b4";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};

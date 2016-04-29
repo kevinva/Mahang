@@ -106,7 +106,7 @@ static NSString *const kFilePostingMessageLog = @"log_posting_message.plist";
 }
 
 - (void)postMsgWithDays:(NSInteger)days{
-    NSString *content = [NSString stringWithFormat:@"#马航飞机失事# 第%ld天[蜡烛] @马来西亚航空", (long)days];
+    NSString *content = [NSString stringWithFormat:@"#马航飞机失事# 距事件发生当天：2014年3月8日， 第%ld天[蜡烛] @马来西亚航空", (long)days];
     
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     [shareParams SSDKEnableUseClientShare];

@@ -33,7 +33,7 @@
 
     [self enableBackgroundTask];
     
-    NSDictionary *dict = @{kUserKeyMahangAcidentDays: @(713)};
+    NSDictionary *dict = @{kUserKeyMahangAcidentDays: @(784)};
     [[NSUserDefaults standardUserDefaults] registerDefaults:dict];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
