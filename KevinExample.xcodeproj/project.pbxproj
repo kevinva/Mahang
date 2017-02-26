@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3CEEEDA5DE43639F4F3AE4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E968A364B6B4328B78F1ABC /* libPods.a */; };
+		023A55D7ADEDB081D69E215A /* libPods-KevinExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EB01E2502E0213999F509B /* libPods-KevinExample.a */; };
 		7FD286C41B27CD2700176CCC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD286C31B27CD2700176CCC /* AddressBook.framework */; };
 		7FD286C61B27CDA100176CCC /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD286C51B27CDA100176CCC /* ImageIO.framework */; };
 		7FD286C81B27CDC000176CCC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD286C71B27CDC000176CCC /* Social.framework */; };
@@ -75,7 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E968A364B6B4328B78F1ABC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		032C7198AECBFA9CB889E1F1 /* Pods-KevinExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KevinExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KevinExample/Pods-KevinExample.debug.xcconfig"; sourceTree = "<group>"; };
 		7FD286C31B27CD2700176CCC /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		7FD286C51B27CDA100176CCC /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		7FD286C71B27CDC000176CCC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -153,7 +153,8 @@
 		82DD06C818F4DF6300A9861F /* HzLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HzLabel.m; sourceTree = "<group>"; };
 		82DD06CA18F4E27600A9861F /* HzTagLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HzTagLabel.h; sourceTree = "<group>"; };
 		82DD06CB18F4E27600A9861F /* HzTagLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HzTagLabel.m; sourceTree = "<group>"; };
-		A1E6F7BF91B84E56890C2F85 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		C4EB01E2502E0213999F509B /* libPods-KevinExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KevinExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0DB11FCD1A79A9169C5DFD1 /* Pods-KevinExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KevinExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-KevinExample/Pods-KevinExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,7 +197,7 @@
 				821CBE9418E40B2F003E0F90 /* CoreGraphics.framework in Frameworks */,
 				821CBE9618E40B2F003E0F90 /* UIKit.framework in Frameworks */,
 				821CBE9218E40B2F003E0F90 /* Foundation.framework in Frameworks */,
-				1D3CEEEDA5DE43639F4F3AE4 /* libPods.a in Frameworks */,
+				023A55D7ADEDB081D69E215A /* libPods-KevinExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +214,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EAC7F300CB28D402257F413 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				032C7198AECBFA9CB889E1F1 /* Pods-KevinExample.debug.xcconfig */,
+				E0DB11FCD1A79A9169C5DFD1 /* Pods-KevinExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7FF998CE1C6049B900EFC6BE /* ShareSDK_v3.2.0 */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,7 +311,7 @@
 				821CBEB618E40B2F003E0F90 /* KevinExampleTests */,
 				821CBE9018E40B2F003E0F90 /* Frameworks */,
 				821CBE8F18E40B2F003E0F90 /* Products */,
-				A1E6F7BF91B84E56890C2F85 /* Pods.xcconfig */,
+				3EAC7F300CB28D402257F413 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -346,7 +356,7 @@
 				821CBE9318E40B2F003E0F90 /* CoreGraphics.framework */,
 				821CBE9518E40B2F003E0F90 /* UIKit.framework */,
 				821CBEB018E40B2F003E0F90 /* XCTest.framework */,
-				0E968A364B6B4328B78F1ABC /* libPods.a */,
+				C4EB01E2502E0213999F509B /* libPods-KevinExample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -418,11 +428,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 821CBEC018E40B2F003E0F90 /* Build configuration list for PBXNativeTarget "KevinExample" */;
 			buildPhases = (
-				4D3CD3FD62244A63B2BE2C5F /* Check Pods Manifest.lock */,
+				7DA9D80DD4BC19DDEF9B2E09 /* [CP] Check Pods Manifest.lock */,
 				821CBE8A18E40B2F003E0F90 /* Sources */,
 				821CBE8B18E40B2F003E0F90 /* Frameworks */,
 				821CBE8C18E40B2F003E0F90 /* Resources */,
-				1879E423CEB74EE19B5B5AB4 /* Copy Pods Resources */,
+				91C8AA76E559FBF2792ECF7B /* [CP] Embed Pods Frameworks */,
+				B50F89880B2F3587F017AD7A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -461,7 +472,8 @@
 				ORGANIZATIONNAME = "何 峙";
 				TargetAttributes = {
 					821CBE8D18E40B2F003E0F90 = {
-						DevelopmentTeam = E2C358R24T;
+						DevelopmentTeam = U5TRB2C65F;
+						ProvisioningStyle = Manual;
 					};
 					821CBEAE18E40B2F003E0F90 = {
 						TestTargetID = 821CBE8D18E40B2F003E0F90;
@@ -515,34 +527,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1879E423CEB74EE19B5B5AB4 /* Copy Pods Resources */ = {
+		7DA9D80DD4BC19DDEF9B2E09 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		4D3CD3FD62244A63B2BE2C5F /* Check Pods Manifest.lock */ = {
+		91C8AA76E559FBF2792ECF7B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KevinExample/Pods-KevinExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B50F89880B2F3587F017AD7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KevinExample/Pods-KevinExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -675,12 +702,13 @@
 		};
 		821CBEC118E40B2F003E0F90 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1E6F7BF91B84E56890C2F85 /* Pods.xcconfig */;
+			baseConfigurationReference = 032C7198AECBFA9CB889E1F1 /* Pods-KevinExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: zhi he (LF544X4TQM)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhi he (LF544X4TQM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = U5TRB2C65F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/ShareSDK_v2.11.0/Connection",
@@ -710,19 +738,21 @@
 					"$(PROJECT_DIR)/KevinExample/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
 				PRODUCT_NAME = "马航失事";
-				PROVISIONING_PROFILE = "a811edda-e9a6-4f36-b1f4-04b4606f03b4";
+				PROVISIONING_PROFILE = "5e1932ec-b402-46d2-b4ab-ba1bb1a690f1";
+				PROVISIONING_PROFILE_SPECIFIER = taolue_test_dev;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		821CBEC218E40B2F003E0F90 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1E6F7BF91B84E56890C2F85 /* Pods.xcconfig */;
+			baseConfigurationReference = E0DB11FCD1A79A9169C5DFD1 /* Pods-KevinExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: zhi he (LF544X4TQM)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhi he (LF544X4TQM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = U5TRB2C65F;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/ShareSDK_v2.11.0/Connection",
@@ -752,7 +782,8 @@
 					"$(PROJECT_DIR)/KevinExample/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
 				PRODUCT_NAME = "马航失事";
-				PROVISIONING_PROFILE = "a811edda-e9a6-4f36-b1f4-04b4606f03b4";
+				PROVISIONING_PROFILE = "5e1932ec-b402-46d2-b4ab-ba1bb1a690f1";
+				PROVISIONING_PROFILE_SPECIFIER = taolue_test_dev;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
